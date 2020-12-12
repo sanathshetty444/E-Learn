@@ -29,8 +29,10 @@ app.use('/faculty', facultyRoute);
 
 app.listen(PORT, () => console.log(`The Server has started on port ${PORT}.`));
 
+// MONGO_URI='mongodb://localhost:27017/E-Learn'
+// JWT_SECRET='6T\Ecj,-z@phUer4,M5?#<9_t46^#c'
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect('mongodb://localhost:27017/E-Learn', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

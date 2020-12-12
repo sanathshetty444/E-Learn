@@ -8,7 +8,7 @@ const auth = (req, res, next) => {
         .status(401)
         .json({ message: 'No authentication token, Authorization failed.' });
 
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    const verified = jwt.verify(token, '6T\Ecj,-z@phUer4,M5?#<9_t46^#c');
     if (!verified) {
       return res
         .status(401)
