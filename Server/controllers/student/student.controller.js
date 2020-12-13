@@ -109,7 +109,7 @@ const tokenIsValid = async (req, res) => {
     const token = req.header('x-auth-token');
     if (!token) return res.json(false);
 
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    const verified = jwt.verify(token,'6T\Ecj,-z@phUer4,M5?#<9_t46^#c' );
     if (!verified) {
       return res.json(false);
     }

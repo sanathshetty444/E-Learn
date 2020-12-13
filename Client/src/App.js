@@ -6,6 +6,7 @@ import UserContext from './context/UserContext';
 import axios from 'axios';
 import './App.css';
 
+
 //Faculty
 import Fprofile from './components/Faculty/Fprofile'
 import AddCourse from './components/Faculty/AddCourse'
@@ -19,6 +20,12 @@ import Sprofile from './components/Student/Sprofile'
 import AttemptQuiz from './components/Student/AttemptQuiz'
 import ChatBot from './Chatbot/ChatbotMain'
 
+// Chat
+import Join from '../src/ChatRoom/components/Join/Join'
+import Chat from '../src/ChatRoom/components/Chat/Chat'
+
+// Forum
+import Forum from '../src/Forum/forum'
 function App() {
   console.log('APP');
   const [userData, setUserData] = useState({
@@ -48,6 +55,10 @@ function App() {
               <Route path="/course/:cid" component={SpecificCourse} />
               <Route path="/profile" component={Sprofile} />
               <Route path="/attempt-quiz/:qid" component={AttemptQuiz} />
+              <Route path="/join" exact component={Join} />
+              <Route path="/chat" component={Chat} />
+              <Route path="/forum" component={Forum} />
+
               
       </Switch>
       </div>
@@ -68,6 +79,10 @@ function App() {
               <Route path="/add-quiz/:cid" component={AddQuiz} />
               <Route path="/add-file/:cid" component={AddFile} />
               <Route path="/course/:cid" component={SpecificCourse} />
+              <Route path="/join" component={Join} />
+              <Route path="/chat" component={Chat} />
+              <Route path="/forum" component={Forum} />
+
       </Switch>
       </div>
       
@@ -87,7 +102,7 @@ function App() {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem('auth-token');
       let student = localStorage.getItem('student');
-      // console.log(student);
+      console.log(student,token);
       // if(!student){
       //   console.log('yes asd asd asd asdfg f ')
       // }
@@ -118,7 +133,7 @@ function App() {
       }
     };
     checkLoggedIn();
-  }, []);
+  },[]);
 
   return (
     <>

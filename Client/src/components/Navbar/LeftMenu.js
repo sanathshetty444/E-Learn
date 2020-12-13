@@ -28,6 +28,12 @@ function LeftMenu(props) {
         <Menu.Item key="courses">
           <Link to="/courses">Courses</Link>
         </Menu.Item>
+        <Menu.Item key="chatroom">
+          <Link to="/join">Chat Now</Link>
+        </Menu.Item>
+        <Menu.Item key="Forum">
+          <Link to="/forum">Forum</Link>
+        </Menu.Item>
       </Menu>
     </div>
   );

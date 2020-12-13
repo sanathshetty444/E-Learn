@@ -4,7 +4,7 @@ import ActionProvider from './ActionProvider';
 import MessageParser from './MessageParser';
 import {Button} from 'antd'
 import config from './config';
-
+import '../components/home.css'
 function ChatbotMain() {
 
   const [toggle,setToggle] = useState(false)
